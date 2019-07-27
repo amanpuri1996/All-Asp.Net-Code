@@ -29,12 +29,11 @@ public partial class _Default : System.Web.UI.Page
             mailClient.Port = 587;
             mailClient.UseDefaultCredentials = false;
             mailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            NetworkCredential cred = new NetworkCredential("ak844722@gmail.com", "9650001236");
-            //NetworkCredential cred = new NetworkCredential("myemailtest100@gmail.com", "Admin@1234#");
+            NetworkCredential cred = new NetworkCredential("smtpemail@gmail.com", "password");
             mailClient.Credentials = cred;
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("support@aman.com",fullname.Text);
-            mail.To.Add("ak844722@gmail.com");
+            mail.To.Add("sendinfo@gmail.com");
             // mail.CC.Add("s.com");
             mail.Subject = "Enquiry";
             mail.Body = "Name:       " + fullname.Text + " <br/>" + "Email id:      " + emailid.Text + " <br/>" + "Contact Number:    " + mobile_no.Text + " <br/>" + "Website :  " + ddlwebsite.SelectedValue + "<br/>" + "Message:  " + msg.Text + "<br />" + "<br />";
@@ -58,11 +57,10 @@ public partial class _Default : System.Web.UI.Page
             mailClient.Port = 587;
             mailClient.UseDefaultCredentials = false;
             mailClient.DeliveryMethod = SmtpDeliveryMethod.Network;
-            // NetworkCredential cred = new NetworkCredential("myemailtest100@gmail.com", "Admin@1234#");
-            NetworkCredential cred = new NetworkCredential("ak844722@gmail.com", "9650001236");
+            NetworkCredential cred = new NetworkCredential("smtpgmail", "password");
             mailClient.Credentials = cred;
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress("support@abc.com", "career@Hybec");
+            mail.From = new MailAddress("support@abc.com", "career@aman");
             mail.To.Add(emailid.Text);
             // mail.CC.Add("s.com");
             mail.Subject = "Carrer Info";
