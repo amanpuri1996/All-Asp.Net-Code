@@ -1,0 +1,38 @@
+<label for="chkPassport">
+    <input type="checkbox" id="chkPassport" />
+    Do you have Passport?</label>
+<br />
+<br />
+<input type="button" id="btnCheck" value = "Check" onclick = "Check()" />
+<script type="text/javascript">
+    function Check() {
+        var chkPassport = document.getElementById("chkPassport");
+        if (chkPassport.checked) {
+            alert("CheckBox checked.");
+        } else {
+            alert("CheckBox not checked.");
+        }
+    }
+</script>
+
+-------------------------------------------
+
+<label for="chkPassport">
+    <input type="checkbox" id="chkPassport" />
+    Do you have Passport?</label>
+<br />
+<br />
+<input type="button" id="btnCheck" value = "Check" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnCheck").click(function () {
+            var isChecked = $("#chkPassport").is(":checked");
+            if (isChecked) {
+                alert("CheckBox checked.");
+            } else {
+                alert("CheckBox not checked.");
+            }
+        });
+    });
+</script>

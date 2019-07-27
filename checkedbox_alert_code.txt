@@ -1,0 +1,38 @@
+------------html---------------------
+<label for="chkPassport">
+    <input type="checkbox" id="chkPassport" />
+    Do you have Passport?</label>
+<br />
+<br />
+<input type="button" id="btnCheck" value = "Check" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#btnCheck").click(function () {
+            var isChecked = $("#chkPassport").is(":checked");
+            if (isChecked) {
+                alert("CheckBox checked.");
+            } else {
+                alert("CheckBox not checked.");
+            }
+        });
+    });
+</script>
+
+--------------------------------------------------------- 
+
+-----------------C# code  -----------------------
+
+protected void ButtonClicked(object sender, EventArgs e)
+{
+    if (chkPassport.Checked)
+    {
+        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('CheckBox checked.');", true);
+    }
+    else
+    {
+        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('CheckBox not checked.');", true);
+    }
+}
+
+----------------------------------------

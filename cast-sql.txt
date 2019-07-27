@@ -1,0 +1,47 @@
+select * from customer_registration where id=2
+
+Select * from add_employee
+
+sp_helptext SearchByClientNameAndDue
+
+
+
+CREATE PROCEDURE [dbo].[SearchByClientNameAndDue]
+
+(@id varchar(50)=null,
+
+ @id1 varchar(50)=null
+
+) 
+
+AS
+
+BEGIN	
+
+	SET NOCOUNT ON;
+
+	
+
+if(@id1='')begin
+
+	SELECT (select RestroName from client where RestroID=InvoiceDetails.ClientId and Status=1)as ClientName,case when Status='1' then 'Open' when Status='2' then 'Pending' else 'Closed' end as InvoiceStatus, case when InvoiceType='Tax' then 'T'+InvoiceNo els
+e 'R'+InvoiceNo end as InvoiceNumber, case when Status='3' then '0' else CAST(GrandTotal AS DECIMAL(18, 2))-CAST(SubTotal AS DECIMAL(18, 2)) end as DueBalance, * from InvoiceDetails where Status!=3 order by InvoiceNo desc
+
+end
+
+else begin
+
+SELECT (select RestroName from client where RestroID=InvoiceDetails.ClientId and client.Status=1)as ClientName,
+case when InvoiceDetails.Status='1' then 'Open' when InvoiceDetails.Status='2' then 'Pending' else 'Closed' end as InvoiceStatus, case when Invo
+iceDetails.InvoiceType='Tax' then 'T'+InvoiceDetails.InvoiceNo else 'R'+InvoiceDetails.InvoiceNo end as InvoiceNumber, case when InvoiceDetails.Status='3' then '0' else CAST(InvoiceDetails.GrandTotal AS DECIMAL(18, 2))-CAST(InvoiceDetails.SubTotal AS DECI
+MAL(18, 2)) end as DueBalance, * from InvoiceDetails inner join client on InvoiceDetails.ClientId=client.RestroID where client.RestroName like '%'+@id1+'%'  order by InvoiceDetails.InvoiceNo desc
+
+end
+
+
+
+END
+
+
+
+

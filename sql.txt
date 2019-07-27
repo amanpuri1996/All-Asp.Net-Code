@@ -1,0 +1,3 @@
+select *,(select air_port_name from tbl_air_port_master where air_port_id=source) as Source_Name,
+(select air_port_name from tbl_air_port_master where air_port_id=destination) as Destination_Name
+ from tbl_insurance where mode_air_or_sea='Lcl'
