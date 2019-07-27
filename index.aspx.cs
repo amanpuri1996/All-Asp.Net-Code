@@ -24,8 +24,8 @@ public partial class index : System.Web.UI.Page
         SmtpClient mailClient = new SmtpClient();
         mailClient.UseDefaultCredentials = false;
         NetworkCredential cred = new NetworkCredential();
-        cred.UserName = "myemailtest100@gmail.com";
-        cred.Password = "Admin@1234#";
+        cred.UserName = "email@gmail.com";
+        cred.Password = "*****";
         mailClient.Credentials = cred;
         mailClient.EnableSsl = true;
         mailClient.Host = "smtp.gmail.com";
@@ -35,7 +35,7 @@ public partial class index : System.Web.UI.Page
         mail.From = new MailAddress("support@abc.com", cred.UserName);
         mail.To.Add(emailid.Text);
 
-        mail.CC.Add("sales@hybecitsolutions.com");
+        mail.CC.Add("salsdfdsg@gmail.com");
 
         mail.Subject = "Enquiry";
         mail.Body = "Name:      " + fname.Text + " <br/>" + "Email id:      " + emailid.Text + " <br/>" + "Contact Number:    " + number.Text + " <br/>"+"Website :  "+ddlwebsite.SelectedValue +"<br/>" + "Message :  " + msg.Text + "<br/>" + "Date :   " + DateTime.Now + "<br />" + "<br />" + "Thank you for submitting form. ";
