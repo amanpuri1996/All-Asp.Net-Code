@@ -1,0 +1,23 @@
+protected void add_image_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            foreach (HttpPostedFile posted in image_file.PostedFiles)
+            {
+                string path = Server.MapPath("~/Admin/image/") + posted.FileName;
+                posted.SaveAs(path);
+                string img = "~/Admin/image/" + posted.FileName;
+                cmd = new SqlCommand("insert into gallery (image) values(@image)", con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@image", img);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            Response.Write("<script>alert('Image Insert Successfully');window.location='Add-Gallery.aspx';</script>");
+        }
+        catch (Exception excp)
+        {
+            throw excp;
+        }
+    }

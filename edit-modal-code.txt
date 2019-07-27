@@ -1,0 +1,140 @@
+<div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <asp:UpdatePanel ID="upd" runat="server"><ContentTemplate>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Manage Business Unit</h4>
+              </div>
+              <div class="modal-body">
+                <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Business Unit</label>
+
+                  <div class="col-sm-8" style="margin-bottom:5px;">
+                    <asp:RequiredFieldValidator ID="ValidatorforBunitName" runat="server" ControlToValidate="txt_business_unit_name" Display="Dynamic" ForeColor="Red" Font-Bold="true" ValidationGroup="BU" ErrorMessage="Please enter business unit."></asp:RequiredFieldValidator>
+                      <asp:Label ID="lbl_msg" runat="server" Visible="false" Font-Size="11px" Font-Bold="true" ForeColor="Red"></asp:Label>
+                    <asp:TextBox  ID="txt_business_unit_name" MaxLength="190" AutoPostBack="true" OnTextChanged="txt_business_unit_name_TextChanged" style="font-weight:bold;font-size:11px;" runat="server" placeholder="Enter business unit." CssClass="form-control" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Business Unit Description</label>
+
+                  <div class="col-sm-8" style="margin-bottom:5px;">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_business_unit_desc" Display="Dynamic" ForeColor="Red" Font-Bold="true" ValidationGroup="BU" ErrorMessage="Please enter business unit description."></asp:RequiredFieldValidator>
+                    <asp:TextBox  ID="txt_business_unit_desc" TextMode="MultiLine" style="font-weight:bold;font-size:11px;" runat="server" placeholder="Enter business unit description." CssClass="form-control" />
+                  </div>
+                </div>
+
+                <div class="form-group" id="div_status" runat="server" visible="false">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Status</label>
+                  <div class="col-sm-8">
+                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="form-control" style="font-weight:bold;font-size:11px;">
+                        <asp:ListItem Value="True">Active</asp:ListItem>
+                        <asp:ListItem Value="False">Deactive</asp:ListItem>
+                    </asp:DropDownList>
+                  </div>
+                </div>
+       
+              </div>
+              </div>
+              <div class="modal-footer">
+               <asp:Button ID="btn_save" runat="server" CssClass="btn btn-primary" OnClick="btn_save_Click" ValidationGroup="BU" Text="Save" />
+              </div>
+                    </ContentTemplate></asp:UpdatePanel>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+                <asp:UpdatePanel ID="upd" runat="server"><ContentTemplate>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Manage Business Unit</h4>
+              </div>
+              <div class="modal-body">
+                <div class="box-body">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Business Unit</label>
+
+                  <div class="col-sm-8" style="margin-bottom:5px;">
+                    <asp:RequiredFieldValidator ID="ValidatorforBunitName" runat="server" ControlToValidate="txt_business_unit_name" Display="Dynamic" ForeColor="Red" Font-Bold="true" ValidationGroup="BU" ErrorMessage="Please enter business unit."></asp:RequiredFieldValidator>
+                      <asp:Label ID="lbl_msg" runat="server" Visible="false" Font-Size="11px" Font-Bold="true" ForeColor="Red"></asp:Label>
+                    <asp:TextBox  ID="txt_business_unit_name" MaxLength="190" AutoPostBack="true" OnTextChanged="txt_business_unit_name_TextChanged" style="font-weight:bold;font-size:11px;" runat="server" placeholder="Enter business unit." CssClass="form-control" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Business Unit Description</label>
+
+                  <div class="col-sm-8" style="margin-bottom:5px;">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_business_unit_desc" Display="Dynamic" ForeColor="Red" Font-Bold="true" ValidationGroup="BU" ErrorMessage="Please enter business unit description."></asp:RequiredFieldValidator>
+                    <asp:TextBox  ID="txt_business_unit_desc" TextMode="MultiLine" style="font-weight:bold;font-size:11px;" runat="server" placeholder="Enter business unit description." CssClass="form-control" />
+                  </div>
+                </div>
+
+                <div class="form-group" id="div_status" runat="server" visible="false">
+                  <label for="inputEmail3" class="col-sm-4 control-label" style="margin-top:8px;font-size:12px">Status</label>
+                  <div class="col-sm-8">
+                    <asp:DropDownList ID="ddl_status" runat="server" CssClass="form-control" style="font-weight:bold;font-size:11px;">
+                        <asp:ListItem Value="True">Active</asp:ListItem>
+                        <asp:ListItem Value="False">Deactive</asp:ListItem>
+                    </asp:DropDownList>
+                  </div>
+                </div>
+       
+              </div>
+              </div>
+              <div class="modal-footer">
+               <asp:Button ID="btn_save" runat="server" CssClass="btn btn-primary" OnClick="btn_save_Click" ValidationGroup="BU" Text="Save" />
+              </div>
+                    </ContentTemplate></asp:UpdatePanel>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
