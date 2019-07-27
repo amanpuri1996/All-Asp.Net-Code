@@ -1,0 +1,6 @@
+               ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "Message", "alert('Loan Apply Successfully!');window.location='index.aspx';", true);
+
+ 
+ string str = "alert('Message: " + lblGrdMaeesage.Text + ".');";
+                ScriptManager.RegisterClientScriptBlock((sender as Control), this.GetType(), "alert", str, tru
+e);
