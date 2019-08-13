@@ -1,0 +1,6 @@
+<asp:RegularExpressionValidator 
+id="FileUpLoadValidator" runat="server" 
+ErrorMessage="Upload Jpegs and Gifs only." 
+ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))(.jpg|.JPG|.gif|.GIF)$" 
+ControlToValidate="FileUpload1">
+</asp:RegularExpressionValidator>
